@@ -1,7 +1,7 @@
 NAME            := k9s
 VERSION         ?= v0.51.0
 PACKAGE         := github.com/derailed/$(NAME)
-OUTPUT_BIN      ?= execs/${NAME}
+OUTPUT_BIN      ?= ~/go/bin/${NAME}
 GO_FLAGS        ?=
 GO_TAGS	        ?= netgo
 CGO_ENABLED     ?=0
@@ -29,7 +29,7 @@ cover:                   ## Run test coverage suite
 
 build:                   ## Builds the CLI
 	@CGO_ENABLED=${CGO_ENABLED} go build ${GO_FLAGS} \
-	-ldflags "-w -s -X ${PACKAGE}/cmd.version=${VERSION} -X ${PACKAGE}/cmd.commit=${GIT_REV} -X ${PACKAGE}/cmd.date=${DATE}" \
+	-ldflags "-w -s -X ${PACKAGE}/cmd.version=${VERSION}-no-shell -X ${PACKAGE}/cmd.commit=${GIT_REV} -X ${PACKAGE}/cmd.date=${DATE}" \
 	-a -tags=${GO_TAGS} -o ${OUTPUT_BIN} main.go
 
 kubectl-stable-version:  ## Get kubectl latest stable version

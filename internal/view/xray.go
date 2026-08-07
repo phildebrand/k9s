@@ -205,11 +205,11 @@ func (x *Xray) refreshActions() {
 			ui.KeyP: ui.NewKeyAction("Logs Previous", x.logsCmd(true), true),
 		})
 		if !x.app.Config.IsReadOnly() {
-			aa.Add(ui.KeyS, ui.NewKeyActionWithOpts("Shell", x.shellCmd,
-				ui.ActionOpts{
-					Visible:   true,
-					Dangerous: true,
-				}))
+			// aa.Add(ui.KeyS, ui.NewKeyActionWithOpts("Shell", x.shellCmd,
+			// 	ui.ActionOpts{
+			// 		Visible:   true,
+			// 		Dangerous: true,
+			// 	}))
 		}
 	case client.PodGVR:
 		aa.Bulk(ui.KeyMap{
@@ -218,11 +218,11 @@ func (x *Xray) refreshActions() {
 		})
 		if !x.app.Config.IsReadOnly() {
 			aa.Bulk(ui.KeyMap{
-				ui.KeyS: ui.NewKeyActionWithOpts("Shell", x.shellCmd,
-					ui.ActionOpts{
-						Visible:   true,
-						Dangerous: true,
-					}),
+				// ui.KeyS: ui.NewKeyActionWithOpts("Shell", x.shellCmd,
+				// 	ui.ActionOpts{
+				// 		Visible:   true,
+				// 		Dangerous: true,
+				// 	}),
 				ui.KeyA: ui.NewKeyActionWithOpts("Attach", x.attachCmd,
 					ui.ActionOpts{
 						Visible:   true,

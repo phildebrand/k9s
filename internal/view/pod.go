@@ -92,13 +92,13 @@ func (p *Pod) bindDangerousKeys(aa *ui.KeyActions) {
 				Visible:   true,
 				Dangerous: true,
 			}),
-		ui.KeyS: ui.NewKeyActionWithOpts(
-			"Shell",
-			p.shellCmd,
-			ui.ActionOpts{
-				Visible:   true,
-				Dangerous: true,
-			}),
+		// ui.KeyS: ui.NewKeyActionWithOpts(
+		// 	"Shell",
+		// 	p.shellCmd,
+		// 	ui.ActionOpts{
+		// 		Visible:   true,
+		// 		Dangerous: true,
+		// 	}),
 		ui.KeyA: ui.NewKeyActionWithOpts(
 			"Attach",
 			p.attachCmd,
